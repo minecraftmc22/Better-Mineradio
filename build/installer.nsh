@@ -261,8 +261,8 @@ Function MineradioNormalizeInstallDir
   ${EndIf}
 
   StrLen $1 "$0"
-  StrCpy $2 "$0" 16 -16
-  ${If} $1 < 16
+  StrCpy $2 "$0" 17 -17
+  ${If} $1 < 17
   ${OrIf} $2 != "\Better-MineRadio"
   ${AndIf} $2 != "\better-mineradio"
     StrCpy $0 "$0\Better-MineRadio"
@@ -607,8 +607,8 @@ Function MineradioValidateInstallDir
   Pop $4
 
   StrLen $0 "$INSTDIR"
-  StrCpy $1 "$INSTDIR" 16 -16
-  ${If} $0 < 16
+  StrCpy $1 "$INSTDIR" 17 -17
+  ${If} $0 < 17
   ${OrIf} $1 != "\Better-MineRadio"
   ${AndIf} $1 != "\better-mineradio"
     MessageBox MB_ICONSTOP|MB_OK "安装目录必须是独立的 Better-MineRadio 文件夹。请选择一个上级目录，安装器会自动创建 Better-MineRadio 子文件夹。"
@@ -798,8 +798,8 @@ Function un.MineradioNormalizeInstallDir
   ${EndIf}
 
   StrLen $1 "$0"
-  StrCpy $2 "$0" 16 -16
-  ${If} $1 < 16
+  StrCpy $2 "$0" 17 -17
+  ${If} $1 < 17
   ${OrIf} $2 != "\Better-MineRadio"
   ${AndIf} $2 != "\better-mineradio"
     StrCpy $0 "$0\Better-MineRadio"
