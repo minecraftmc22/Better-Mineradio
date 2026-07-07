@@ -29,8 +29,8 @@ const WINDOWED_SCALE = 3 / 4;
 const WINDOWED_MARGIN = 32;
 const MIN_WINDOWED_WIDTH = 960;
 const MIN_WINDOWED_HEIGHT = 540;
-const APP_NAME = 'Mineradio';
-const APP_USER_MODEL_ID = 'com.mineradio.desktop';
+const APP_NAME = 'Better-Mineradio';
+const APP_USER_MODEL_ID = 'com.better-mineradio.desktop';
 const APP_ICON_ICO = path.join(__dirname, '..', 'build', 'icon.ico');
 const NETEASE_LOGIN_PARTITION = 'persist:mineradio-netease-login';
 const NETEASE_LOGIN_URL = 'https://music.163.com/#/login';
@@ -287,7 +287,7 @@ function ensureDesktopShortcut() {
       target,
       cwd: path.dirname(target),
       args: '',
-      description: 'Mineradio desktop music player',
+      description: 'Better-Mineradio desktop music player',
       icon: fs.existsSync(APP_ICON_ICO) ? APP_ICON_ICO : target,
       iconIndex: 0,
       appUserModelId: APP_USER_MODEL_ID,
@@ -929,7 +929,7 @@ function createDesktopLyricsWindow(payload = {}) {
     focusable: false,
     skipTaskbar: true,
     show: false,
-    title: 'Mineradio Desktop Lyrics',
+    title: 'Better-Mineradio Desktop Lyrics',
     webPreferences: {
       preload: path.join(__dirname, 'overlay-preload.js'),
       contextIsolation: true,
@@ -1058,7 +1058,7 @@ function createWallpaperWindow(payload = {}) {
     focusable: false,
     skipTaskbar: true,
     show: false,
-    title: 'Mineradio Wallpaper',
+    title: 'Better-Mineradio Wallpaper',
     webPreferences: {
       preload: path.join(__dirname, 'overlay-preload.js'),
       contextIsolation: true,

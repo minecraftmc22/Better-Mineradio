@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mineradio</title>
+<title>Better-Mineradio</title>
 <meta name="referrer" content="no-referrer">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Inter:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 <script src="vendor/three.r128.min.js"></script>
@@ -1887,7 +1887,7 @@ html.control-glass-svg-ok #visual-guide-btn:hover{
 
   <!-- 主内容 -->
   <div class="splash-content">
-    <div class="splash-wordmark" id="splash-wordmark" aria-label="Mineradio">
+    <div class="splash-wordmark" id="splash-wordmark" aria-label="Better-Mineradio">
       <span class="splash-word-mine">Mine</span>
       <span class="splash-word-radio" aria-label="radio">rad<span class="splash-word-i" aria-hidden="true"></span><span class="splash-word-o">o</span></span>
     </div>
@@ -1928,7 +1928,7 @@ html.control-glass-svg-ok #visual-guide-btn:hover{
 </div>
 
 <!-- 空场 Home -->
-<section id="empty-home" aria-label="Mineradio home">
+<section id="empty-home" aria-label="Better-Mineradio home">
   <div class="empty-home-shell">
     <div class="home-hero">
       <div class="home-hero-inner home-construction-inner">
@@ -2482,7 +2482,7 @@ html.control-glass-svg-ok #visual-guide-btn:hover{
       <button id="login-provider-qq" class="qq" type="button" onclick="setLoginProvider('qq')">QQ 音乐</button>
     </div>
     <div class="login-intro">
-      <div class="login-intro-kicker">Mineradio</div>
+      <div class="login-intro-kicker">Better-Mineradio</div>
       <div class="login-intro-title">音乐播放器，也是一座视觉舞台</div>
       <div class="login-intro-body">搜索或导入一首歌即可播放；登录后会同步歌单、红心和播客，让封面、歌词和粒子跟着音乐动起来。</div>
     </div>
@@ -2921,7 +2921,7 @@ function clearSmtcMetadata() {
 }
 
 /* --- 标题模式 (Title Mode) --- */
-var TITLE_SUFFIX = ' -Mineradio';
+var TITLE_SUFFIX = ' -Better-Mineradio';
 var titleUpdateThrottle = 0;
 function normalizeTitleMode(value) {
   return /^(song-name|song-artist|full-line|word-by-word|app-name)$/.test(String(value || '')) ? value : 'song-name';
@@ -2960,7 +2960,7 @@ function updateWindowTitle() {
   var mode = normalizeTitleMode(fx.titleMode);
   var title = '';
   if (mode === 'app-name') {
-    title = 'Mineradio';
+    title = 'Better-Mineradio';
   } else {
     var song = getCurrentSongForTitle();
     if (song) {
@@ -2980,7 +2980,7 @@ function updateWindowTitle() {
         title = (word || song.name || '') + TITLE_SUFFIX;
       }
     } else {
-      title = 'Mineradio';
+      title = 'Better-Mineradio';
     }
   }
   if (title) document.title = title;
@@ -12468,7 +12468,7 @@ function updateLocalBeatModal() {
   var desc = document.getElementById('local-beat-desc');
   if (desc) desc.textContent = mode === 'dj'
     ? '适合 DJ、长混音或鼓点密集的本地音频，会使用更稳定的低频锁拍并进入 DJ 视觉驱动。'
-    : '适合普通歌曲和日常播放，会沿用 Mineradio 电影视角的综合节奏分析。';
+    : '适合普通歌曲和日常播放，会沿用 Better-Mineradio 电影视角的综合节奏分析。';
   var start = document.getElementById('local-beat-start-btn');
   var cancel = document.getElementById('local-beat-cancel-btn');
   var later = document.getElementById('local-beat-later-btn');
@@ -15797,7 +15797,7 @@ function renderHomeDiscover() {
   var weatherKicker = document.getElementById('home-weather-kicker');
   var weatherMeta = document.getElementById('home-weather-meta');
   if (weatherTitle) weatherTitle.textContent = '我的音乐库';
-  if (weatherKicker) weatherKicker.textContent = 'Mineradio · Your Library';
+  if (weatherKicker) weatherKicker.textContent = 'Better-Mineradio · Your Library';
   if (sub) {
     if (loggedOutHome) sub.textContent = '登录后会把你的歌单、常听歌手和最近播放放在这里；也可以直接搜索或导入本地音乐。';
     else sub.textContent = '从你的歌单、最近播放和常听歌手开始，天气电台放在需要氛围的时候再开。';
@@ -20778,7 +20778,7 @@ function userFxArchiveExportPayload(slot) {
   };
 }
 function safeArchiveFileName(name) {
-  return String(name || 'Mineradio 用户存档').replace(/[\\/:*?"<>|]+/g, '-').slice(0, 48) + '.json';
+  return String(name || 'Better-Mineradio 用户存档').replace(/[\\/:*?"<>|]+/g, '-').slice(0, 48) + '.json';
 }
 function exportUserFxArchive(index) {
   var slot = userFxArchiveAt(index);
@@ -22210,7 +22210,7 @@ function ensureHotkeyModal() {
   modal.innerHTML =
     '<div class="hotkey-dialog" role="dialog" aria-modal="true" aria-label="热键设置">' +
       '<div class="hotkey-head">' +
-        '<div><div class="hotkey-title">热键设置</div><div class="hotkey-sub">局内热键只在 Mineradio 窗口内生效；全局热键会向系统注册，并检测是否被占用。</div></div>' +
+        '<div><div class="hotkey-title">热键设置</div><div class="hotkey-sub">局内热键只在 Better-Mineradio 窗口内生效；全局热键会向系统注册，并检测是否被占用。</div></div>' +
         '<button class="hotkey-close" type="button" data-hotkey-close aria-label="关闭">×</button>' +
       '</div>' +
       '<div class="hotkey-toolbar">' +
@@ -22235,7 +22235,7 @@ function ensureHotkeyModal() {
 }
 function hotkeyStatusMarkup(scope, actionKey, binding, duplicate) {
   if (!binding) return '<span class="hotkey-status">未设置</span>';
-  if (duplicate && duplicate[binding] > 1) return '<span class="hotkey-status conflict"><span class="source-icon">!</span>Mineradio 内部重复</span>';
+  if (duplicate && duplicate[binding] > 1) return '<span class="hotkey-status conflict"><span class="source-icon">!</span>Better-Mineradio 内部重复</span>';
   if (scope === 'local') return '<span class="hotkey-status ok">可用</span>';
   var status = hotkeyGlobalStatus[actionKey];
   if (!status) return '<span class="hotkey-status">待检测</span>';
@@ -23056,7 +23056,7 @@ function syncUpdatePreviewStateClass() {
   if (foot) {
     if (isDownloading) foot.textContent = (updatePreviewState.message || (isPatch ? '正在下载快速补丁' : '正在下载完整安装包')) + (updateProgressDetailText() ? ' · ' + updateProgressDetailText() : '');
     else if (isError) foot.textContent = '下载失败：' + (updatePreviewState.errorReason || updatePreviewState.errorDetail || updatePreviewState.message || '请稍后重试') + (updatePreviewState.failedAttempts && updatePreviewState.failedAttempts.length ? ' · 已尝试 ' + updatePreviewState.failedAttempts.length + ' 条线路' : '');
-    else if (isReady && isPatch) foot.textContent = updatePreviewState.restartRequired ? '快速补丁已应用，重启 Mineradio 后生效。' : '快速补丁已应用。';
+    else if (isReady && isPatch) foot.textContent = updatePreviewState.restartRequired ? '快速补丁已应用，重启 Better-Mineradio 后生效。' : '快速补丁已应用。';
     else if (isReady) foot.textContent = updatePreviewState.cached ? '已复用上次校验通过的安装包，不会重复下载。' : '安装包已准备好，点击按钮后再打开安装。';
     else if (updatePreviewState.patchAvailable) foot.textContent = '优先使用轻量补丁，只更新缺失或变更的资源文件；不适用时可下载完整安装包。';
     else foot.textContent = updatePreviewState.updateAvailable ? '没有可用快速补丁时会下载完整安装包。' : '当前版本已是最新。';
@@ -23314,7 +23314,7 @@ async function restartForAppliedPatch() {
       return;
     }
   } catch (e) {}
-  showToast('请手动重启 Mineradio 让补丁生效');
+  showToast('请手动重启 Better-Mineradio 让补丁生效');
 }
 
 async function openDownloadedUpdateInstaller(filePath) {
@@ -24696,7 +24696,7 @@ var visualGuideSteps = [
   {
     target: 'stage',
     kicker: '01 / Welcome',
-    title: 'Mineradio 是用来听歌的视觉播放器',
+    title: 'Better-Mineradio 是用来听歌的视觉播放器',
     body: '它不是单纯歌单页：搜索或导入一首歌后，封面、歌词、粒子和镜头会跟着音乐一起动。'
   },
   {
@@ -26406,7 +26406,7 @@ function currentDesktopSongMeta() {
   var song = playQueue && currentIdx >= 0 ? playQueue[currentIdx] : null;
   song = song || currentLyricSong && currentLyricSong() || {};
   return {
-    title: song.name || song.title || 'Mineradio',
+    title: song.name || song.title || 'Better-Mineradio',
     artist: song.artist || song.ar || song.author || '',
     cover: (typeof songCoverSrc === 'function' && song) ? (songCoverSrc(song, 360) || song.cover || '') : (song.cover || '')
   };
@@ -26452,7 +26452,7 @@ function currentDesktopLyricSnapshot() {
       progressSpan: 4.8
     };
   }
-  return { text: normalizeDesktopLyricText(currentDesktopSongMeta().title || 'Mineradio'), progress: 0, progressSpan: 4.8 };
+  return { text: normalizeDesktopLyricText(currentDesktopSongMeta().title || 'Better-Mineradio'), progress: 0, progressSpan: 4.8 };
 }
 function desktopOverlayColorValue(value, fallback) {
   var raw = String(value || '').trim();
