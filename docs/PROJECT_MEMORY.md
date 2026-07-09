@@ -1,5 +1,12 @@
 # Mineradio Project Memory
 
+### 2026-07-09 - v1.1.4 发布准备
+
+- 版本号更新至 v1.1.4
+- 新增 TTML 歌词支持、歌词翻译、桌面歌词翻译、快捷键设置、音量滚轮调节
+- 更新 README.md、CHANGELOG.md、docs/HANDOFF_NEXT_CHAT.md、docs/RELEASE_NOTES_v1.1.4.md
+- 更新 package.json、dist/latest.yml 版本号
+
 ### 2026-06-25 - P0 Installer In-Place Repair Rule
 
 - User requirement: all users must receive the installer/uninstaller safety fix with zero risk to unrelated files.
@@ -12,17 +19,14 @@
 
 ## Stable Project Facts
 
-- 可运行程序：`E:\桌面\播放器软件\Mineradio\Mineradio.exe`
-- 运行版主目录：`E:\桌面\播放器软件\Mineradio`
-- 真实代码/Git 仓库：`E:\桌面\播放器软件\Mineradio\resources\app`
-- GitHub 仓库：`https://github.com/XxHuberrr/Mineradio.git`
-- 统一备份目录：`E:\桌面\播放器软件\工作区备份`
-- 当前源码检查点：`v1.1.0`
-- 最近正式安装包 Release 基线：`v1.1.0` 纯净安装版；`v1.0.10` 及更早安装包需隔离，不再建议安装或传播。
-- 发布入口：GitHub Releases，更新检查依赖 `latest.yml` 和可选轻量补丁 JSON。
-- 更新包命名规则：从 `v1.0.10` 起，快速补丁本地文件名和 GitHub Release label 使用 `Mineradio-旧版本→新版本.patch.json` 这种右箭头格式；GitHub 资产底层 `name` 可能会把 `→` 净化成点号，但更新解析仍可识别 from/to 版本。
-- 快速补丁范围规则：从 `v1.0.10` 起，每次发布只为低于新版的最近 4 个版本生成补丁；更早版本不再从 `1.0.0` 开始补丁，提示用户下载完整安装包更新。
-- 安装包样式：以后按 `docs/INSTALLER_STYLE.md` 的中文极简黑白蓝格式打包。
+- 可运行程序：`E:\User Files\Study_Files\Github\Mineradio-fix_SMTC\dist\win-unpacked\Better-Mineradio.exe`
+- 运行版主目录：`E:\User Files\Study_Files\Github\Mineradio-fix_SMTC\dist\win-unpacked`
+- 真实代码/Git 仓库：`E:\User Files\Study_Files\Github\Mineradio-fix_SMTC`
+- GitHub 仓库：`https://github.com/Minecraftmc22/Mineradio-fix_SMTC`
+- 当前源码检查点：`v1.1.4`
+- 最近正式安装包 Release 基线：`v1.1.4`
+- 发布入口：GitHub Releases，更新检查依赖 `latest.yml`。
+- 安装包样式：按 `docs/INSTALLER_STYLE.md` 的中文极简黑白蓝格式打包。
 
 ## Workspace Organization
 

@@ -1,14 +1,13 @@
 # Mineradio Next Chat Handoff
 
-更新时间：2026-06-24
+更新时间：2026-07-09
 
 ## 新对话先执行
 
 ```powershell
-cd E:\桌面\播放器软件\Mineradio\resources\app
+cd E:\User Files\Study_Files\Github\Mineradio-fix_SMTC
 git status --short --branch
 git log --oneline -5 --decorate
-Get-Content AGENTS.md
 Get-Content docs\PROJECT_MEMORY.md
 Get-Content docs\HANDOFF_NEXT_CHAT.md
 ```
@@ -19,67 +18,69 @@ Get-Content docs\HANDOFF_NEXT_CHAT.md
 Get-Content docs\3D_PLAYLIST_SHELF_MEMORY.md
 Get-Content docs\SECURITY_REBUILD_2026-06-24.md
 Get-Content CHANGELOG.md -TotalCount 80
-Get-Content RELEASE.md
+Get-Content docs\RELEASE_NOTES_v1.1.4.md
 ```
 
 ## 当前状态
 
-- 当前真实代码/Git 仓库：`E:\桌面\播放器软件\Mineradio\resources\app`
-- 当前版本：`v1.1.0`
-- 当前发布策略：纯净安装版，从当前可信源码重新构建；`v1.0.10` 及更早旧安装包需要隔离，不再建议安装或传播。
-- 本次发布不做 `v1.0.10 -> v1.1.0` 软件内本地更新，不上传 `latest.yml`，不生成快速补丁。
+- 当前代码/Git 仓库：`E:\User Files\Study_Files\Github\Mineradio-fix_SMTC`
+- 当前版本：`v1.1.4`
+- GitHub 仓库：`https://github.com/Minecraftmc22/Mineradio-fix_SMTC`
+- 当前发布策略：纯净安装版，从当前可信源码重新构建。
 - 安装包样式继续沿用 `docs/INSTALLER_STYLE.md` 的中文极简黑白蓝格式。
-- GitHub 仓库已公开：`https://github.com/XxHuberrr/Mineradio`
-- `v1.1.0` Release：`https://github.com/XxHuberrr/Mineradio/releases/tag/v1.1.0`
-- GitHub `/releases/latest` 仍返回 `v1.0.10`，这是刻意设置，避免旧版软件内更新到 1.1.0。
 
-## 本轮重点
+## 本轮重点（v1.1.4）
 
-- 已将 `E:\Download\默认测试.json` 设为首次启动默认用户存档和软件内默认视觉参数。
-- 新增 `public/default-user-fx-archive.json`，代码中 `PACKAGED_DEFAULT_FX_SNAPSHOT` 与该 JSON 已脚本比对一致。
-- 没有本地 `mineradio-lyric-layout-v1` 时，`readSavedLyricLayout()` 使用 packaged 默认快照；没有本地用户存档 key 时自动创建「默认测试」槽位。
-- 已恢复详细日志和发布说明：`CHANGELOG.md`、`README.md`、`SECURITY.md`、`RELEASE.md`、`docs/SECURITY_REBUILD_2026-06-24.md`、`docs/RELEASE_NOTES_v1.1.0.md`。
-- 已生成安装包：`dist/Mineradio-1.1.0-Setup.exe`。
-- 已生成校验文件：`dist/Mineradio-1.1.0-SHA256SUMS.txt`。
-- 已发布资产：安装包、blockmap、SHA256SUMS；未上传 `latest.yml`。
-- 已批量给旧 Release（`v1.0.10` 到 `v0.9.9`）正文顶部追加旧安装包隔离警示。
+### TTML 歌词与翻译支持
+- 新增 Apple TTML 格式歌词解析器，支持逐词时间戳和翻译
+- 歌词数据结构新增 `translation` 字段
+- 支持网易云翻译歌词（tlyric）自动合并
+- TTML 解析修复：空格处理（自动补全单词间缺失空格）
+
+### 3D 歌词翻译显示
+- 翻译歌词作为独立 3D mesh 渲染，带完整描边/发光效果
+- 翻译位于主歌词下方，大小可调节
+- 新增「翻译大小」滑块（设置 → 歌词 → 翻译）
+
+### 桌面歌词翻译
+- 桌面歌词新增翻译显示支持
+- 新增「桌面歌词翻译」开关（设置 → 叠加效果）
+
+### 歌词源设置完善
+- 歌词来源信息显示（平台标签 + 时间轴类型标签）
+- 新增「自动搜索歌词」开关
+- 新增「优先 TTML 歌词」开关
+
+### 自定义歌词 TTML 支持
+- 自定义歌词弹窗新增格式选择：LRC / TTML / 自动检测
+
+### 快捷键设置
+- 新增「快捷键」设置区域（设置 → 快捷键）
+- 支持配置：播放/暂停、上/下一首、歌词显示/隐藏、歌词放大/缩小、音量加/减、老板键
+
+### 音量滚轮调节
+- 鼠标悬停在音量按钮上时，使用滚轮调节音量
+
+### 歌词描边修复
+- 描边层现在正确跟随摄像头方向（使用 gl_FrontFacing 翻转 UV）
 
 ## 已知验证
 
 - `git diff --check`：通过。
 - `node --check server.js`：通过。
-- 前端 `public/index.html` 5 个内联脚本解析：通过。
-- `public/default-user-fx-archive.json` JSON 解析：通过。
-- 代码内置默认快照与 `public/default-user-fx-archive.json` 字段比对：一致。
-- Git 跟踪高风险残留检查：没有匹配 `.exe/.dll/.scr/.bat/.cmd/.ps1/.vbs/.jse/.wsf/.hta/.xlsm/.msi`。
-- `npm run build:win`：第一次被旧代理 `127.0.0.1:26001` 拦截；切到 `127.0.0.1:10808` 后构建成功。
-- Defender 状态：实时防护开启，签名版本 `1.453.247.0`。
-- Defender 已扫描新安装包和 `dist\win-unpacked`；`Get-MpThreatDetection` 查询为空。
-- 安装包 SHA256：`bd53aae4e551f5b0b5a398a51e6ec1de5a9a57cb42e5eecedb0a1647fdcee6e6`。
+- 前端 `public/index.html` 内联脚本解析：通过。
+- `public/desktop-lyrics.html` 内联脚本解析：通过。
 
 ## 发布注意
 
-- GitHub CLI 命令需要在命令内覆盖代理：
-
-```powershell
-$env:HTTP_PROXY='http://127.0.0.1:10808'
-$env:HTTPS_PROXY='http://127.0.0.1:10808'
-$env:ALL_PROXY='socks5://127.0.0.1:10808'
-```
-
-- 发布 `v1.1.0` 时不要上传 `dist/latest.yml`。
+- 发布 `v1.1.4` 时上传 `dist/latest.yml` 用于软件内更新检测。
 - Release 建议上传：
-  - `dist/Mineradio-1.1.0-Setup.exe`
-  - `dist/Mineradio-1.1.0-Setup.exe.blockmap`
-  - `dist/Mineradio-1.1.0-SHA256SUMS.txt`
-- Release 正文使用 `docs/RELEASE_NOTES_v1.1.0.md`。
-- Release 需要 `--latest=false` 或等价 API，避免旧版客户端通过 `/releases/latest` 自动发现。
-- 旧 release 尤其 `v1.0.10` 需要追加隔离警示，不要删除旧资产。
+  - `dist/Better-Mineradio-1.1.4-Setup.exe`
+  - `dist/Better-Mineradio-1.1.4-Setup.exe.blockmap`
+- Release 正文使用 `docs/RELEASE_NOTES_v1.1.4.md`。
+- 构建后需要更新 `dist/latest.yml` 中的 `sha512` 和 `size`。
 
 ## 不要做
 
-- 不要修改旧外层源码目录，只有 `resources\app` 会影响运行版。
-- 不要从 `工作区备份\2026-06-18-workspace-cleanup`、旧 `dist`、旧 `node_modules` 或旧 packaged build 中恢复可执行产物。
 - 不要使用 `git reset --hard` 或 `git checkout --` 回滚用户改动。
-- 不要把 `v1.1.0` 当作 `v1.0.10` 的软件内更新发布。
-- 不要上传 `latest.yml` 或 `v1.0.10 -> v1.1.0` 快速补丁。
+- 不要从旧 dist、旧 node_modules 或旧 packaged build 中恢复可执行产物。
