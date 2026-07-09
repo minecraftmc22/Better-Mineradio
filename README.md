@@ -50,7 +50,7 @@ Better-Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把天气电
 | 本 Fork Release | [Minecraftmc22/Mineradio-fix_SMTC Releases](https://github.com/Minecraftmc22/Mineradio-fix_SMTC/releases) |
 | 原版 Release | [XxHuberrr/Mineradio Releases](https://github.com/XxHuberrr/Mineradio/releases) |
 
-安装时只需要下载并运行 `Better-Mineradio-1.1.3-Setup.exe`。不要下载 `Source code`、`.blockmap`、`latest.yml`，也不要把 `win-unpacked` 当成正式安装包。
+安装时只需要下载并运行 `Better-Mineradio-1.1.4-Setup.exe`。不要下载 `Source code`、`.blockmap`、`latest.yml`，也不要把 `win-unpacked` 当成正式安装包。
 
 ## 下载或安装被拦截怎么办
 
@@ -62,15 +62,21 @@ Better-Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把天气电
 
 ## 当前版本
 
-当前版本：`1.1.3`
+当前版本：`1.1.4`
 
-状态：1.1.3 + SMTC 集成 + SMTC 设置 + 自定义歌词字体 + 标题模式设置。
+状态：1.1.4 + TTML 歌词支持 + 歌词翻译 + 桌面歌词翻译 + 快捷键设置 + 音量滚轮调节 + 歌词源设置完善 + 歌词描边跟随摄像头。
+
+详见 [CHANGELOG.md](./CHANGELOG.md)。
 
 ## 核心特性
 
 - **SMTC 系统媒体控制**（本 Fork 新增）—— Windows 锁屏、音量混合器显示歌曲信息和控制按钮
 - **自定义歌词字体**（本 Fork 新增）—— 支持输入任意 CSS 字体名
 - **标题模式设置**（本 Fork 新增）—— 歌曲名/歌曲名-歌手/整句歌词/逐词歌词/软件名 5 种标题模式
+- **TTML 歌词支持**（本 Fork 新增）—— Apple TTML 格式解析，逐词时间戳和翻译
+- **歌词翻译**（本 Fork 新增）—— 3D 歌词和桌面歌词均支持翻译显示
+- **快捷键设置**（本 Fork 新增）—— 可自定义播放控制、歌词显示、音量调节等快捷键
+- **音量滚轮调节**（本 Fork 新增）—— 鼠标悬停音量按钮时使用滚轮调节
 - Open-Meteo 天气电台，根据当前位置、城市和天气 mood 生成更合适的播放队列
 - 首页包含天气电台、每日推荐、私人电台、继续听、听歌画像和我的歌单入口
 - Wallpaper 银河首页背景，未播放状态保持干净的星河氛围
@@ -89,7 +95,7 @@ Better-Mineradio 是一款 Windows 桌面沉浸式音乐播放器，把天气电
 
 Windows 用户可以在 GitHub Releases 中下载安装包。
 
-正式分发以 `Better-Mineradio-1.1.3-Setup.exe` 为准，不建议直接下载 `win-unpacked` 目录作为正式分发包。安装包会创建桌面快捷方式；直接运行打包版 `Better-Mineradio.exe` 时，应用也会在首次启动时补创建桌面快捷方式。
+正式分发以 `Better-Mineradio-1.1.4-Setup.exe` 为准，不建议直接下载 `win-unpacked` 目录作为正式分发包。安装包会创建桌面快捷方式；直接运行打包版 `Better-Mineradio.exe` 时，应用也会在首次启动时补创建桌面快捷方式。
 
 ## 开发运行
 
@@ -129,7 +135,7 @@ Better-Mineradio 不是网易云音乐、QQ 音乐或腾讯音乐娱乐集团的
 - **原项目**：[Mineradio](https://github.com/XxHuberrr/Mineradio) 由 [XxHuberrr](https://github.com/XxHuberrr) 主要设计与打造。
 - emily 作为早期视觉底层想法与 `emily` 视觉预设改进方向的共创者和灵感来源之一，特此感谢。
 - 同时感谢小天才e宝、应春日、锋将军、軌跡、林中、骊、风痕、花椰菜🥦在早期体验、测试反馈和发布准备中的帮助。
-- 本 Fork 的 SMTC 集成、自定义歌词字体、标题模式设置由 [Minecraftmc22](https://github.com/Minecraftmc22) 完成。
+- 本 Fork 的 SMTC 集成、自定义歌词字体、标题模式设置、TTML 歌词支持、歌词翻译、快捷键设置由 [Minecraftmc22](https://github.com/Minecraftmc22) 完成。
 
 ## 版权与授权
 
